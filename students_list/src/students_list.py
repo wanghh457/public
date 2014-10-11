@@ -1,5 +1,5 @@
 #!/usr/local/bin/python  
-# -*- coding:utf-8 -*-  
+# -*- coding:cp850 -*-  
   
 import os  
 import re  
@@ -24,22 +24,22 @@ def BuddleSortByScore( stulist ):
   
 #按顺序输出所有学生的信息  
 def PrintAllStudentInfo( stulist ):  
-    print u"______________________学生列表_______________"  
+    print "______________________学生列表_______________"  
     for i in range( len(stulist) ):  
-        print u"姓名:" ,  
+        print "姓名:" ,  
         print stulist[i].name,  
         print "    " ,  
-        print u"学号:" ,  
+        print "学号:" ,  
         print stulist[i].ID ,  
         print "   " ,  
-        print u"分数：" ,  
+        print "分数：" ,  
         print stulist[i].score  
     print "____________________________________________"  
   
 #增加一个学生,增加成功返回True，否则返回False  
 def Add( stulist , stu ):  
     if searchByID( stulist , stu.ID ) == 1:  
-        print u"此ID已经存在！"  
+        print "此ID已经存在！"  
         return False  
     stulist.append( stu )  
   
@@ -81,9 +81,9 @@ def DeleteByID( stulist , ID ):
                     file_object.write(str(stu2.score))  
                     file_object.write("\r\n")  
                 file_object.close()  
-                print u"删除成功!"  
+                print "删除成功!"  
             return True  
-    print u"删除失败!"  
+    print "删除失败!"  
     return False  
   
   
@@ -107,10 +107,10 @@ def DeleteByName( stulist , name ):
                  file_object.write(str(stu2.score))  
                  file_object.write("\r\n")  
              file_object.close()  
-             print u"删除成功!"  
+             print "删除成功!"  
         return True  
     else:  
-        print u"删除失败!"  
+        print "删除失败!"  
         print pos  
         return False  
   
@@ -119,13 +119,13 @@ def DeleteByName( stulist , name ):
 def searchByID( stulist , ID ):  
     for i in range( len(stulist) ):  
         if stulist[i].ID == ID:  
-            print u"姓名：" ,  
+            print "姓名：" ,  
             print stulist[i].name ,  
             print "  " ,  
-            print u"学号:" ,  
+            print "学号:" ,  
             print stulist[i].ID ,  
             print "   " ,  
-            print u"分数:" ,  
+            print "分数:" ,  
             print stulist[i].score   
             return i  
     return -1  
@@ -134,20 +134,20 @@ def searchByID( stulist , ID ):
 def searchByName( stulist , name ):  
     for i in range( len(stulist) ):  
         if stulist[i].name == name:  
-            print u"姓名：" ,  
+            print "姓名：" ,  
             print stulist[i].name ,  
             print "  " ,  
-            print u"学号:" ,  
+            print "学号:" ,  
             print stulist[i].ID ,  
             print "   " ,  
-            print u"分数:" ,  
+            print "分数:" ,  
             print stulist[i].score   
             return i  
     return -1  
   
 #初始化，读取文件，更新学生信息  
 def Init( stulist ):  
-    print u"初始化......"  
+    print "初始化......"  
       
     file_object = open("students.txt","r")  
   
@@ -160,16 +160,16 @@ def Init( stulist ):
         stu.name = s[1]  
         stu.score = s[2]  
         stulist.append(stu)  
-    print u"初始化成功!"  
+    print "初始化成功!"  
                          
   
 #查找菜单  
 def QueryMenu( stulist ):  
     while True:  
         print "******************************"  
-        print u"根据学生的学号进行查找-------1"  
-        print u"根据学生的姓名进行查找-------2"  
-        print u"离开查找模块----------------3"  
+        print "根据学生的学号进行查找-------1"  
+        print "根据学生的姓名进行查找-------2"  
+        print "离开查找模块----------------3"  
         print "******************************"  
   
         nChoose = raw_input("请输入你的选择")  
@@ -183,15 +183,15 @@ def QueryMenu( stulist ):
         elif nChoose == "3":  
             return  
         else:  
-            print u"选择输入错误，请重新输入!"  
+            print "选择输入错误，请重新输入!"  
               
 #删除模块  
 def DeleteMenu( stulist ):  
     while True:  
         print "*****************************"  
-        print u"根据学生的学号进行删除------1"  
-        print u"根据学生的姓名进行删除------2"  
-        print u"离开删除模块---------------3"  
+        print "根据学生的学号进行删除------1"  
+        print "根据学生的姓名进行删除------2"  
+        print "离开删除模块---------------3"  
         print "******************************"  
   
         nChoose = raw_input("请进行选择:")  
@@ -205,20 +205,20 @@ def DeleteMenu( stulist ):
         elif nChoose == "3":  
             return  
         else:  
-            print u"您的选择有误，请重新输入！"  
+            print "您的选择有误，请重新输入！"  
               
                           
 #菜单  
 def menu( stulist ):  
     while True:  
         print "***********************"  
-        print u"--------菜单------------"  
-        print u"增加学生信息---------1"  
-        print u"查找一个学生的信息----2"  
-        print u"删除一个学生的信息----3"  
-        print u"输出所有学生的信息----4"  
-        print u"根据分数排序---------5"  
-        print u"退出程序-------------6"  
+        print "--------菜单------------"  
+        print "增加学生信息---------1"  
+        print "查找一个学生的信息----2"  
+        print "删除一个学生的信息----3"  
+        print "输出所有学生的信息----4"  
+        print "根据分数排序---------5"  
+        print "退出程序-------------6"  
         print "------------------------"  
         print "************************"  
   
@@ -245,15 +245,15 @@ def menu( stulist ):
                 #if stu.score >= 0 and stu.score <= 100:  
                 #   break  
                 #利用正则表达式来判断分数是否符合标准  
-                if re.match( "^[0-9]" ,str(stu.score) ) and stu.score<=100 and               stu.score >= 0 :  
+                if re.match( "^[0-9]" ,str(stu.score) ) and stu.score<=100 and  stu.score >= 0 :  
                     break   
                 else:  
-                    print u"分数不满足实际情况，应该为0--100之间的数字!"  
+                    print "分数不满足实际情况，应该为0--100之间的数字!"  
   
             if Add( stulist , stu ) == 1:  
-                print u"学生信息增加成功!"  
+                print "学生信息增加成功!"  
             else:  
-                print u"学生信息增加失败!"  
+                print "学生信息增加失败!"  
         elif nChoose == "2":  
             QueryMenu( stulist )  
         elif nChoose == "3":  
@@ -277,7 +277,7 @@ def menu( stulist ):
         elif nChoose == "6":  
             return  
         else:  
-            print u"输入有误，请重新输入！"   
+            print "输入有误，请重新输入！"   
               
 #测试函数部分  
 if __name__ == '__main__':  
